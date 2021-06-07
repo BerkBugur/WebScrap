@@ -1,9 +1,14 @@
-from bs4 import BeautifulSoup
-import requests
 import urllib.request
 
-URL="https://usel.az/image/cache/catalog/00-00007242/addaadda-400x400-product_thumb.jpg"
+from bs4 import BeautifulSoup
+import requests
 
-x = "berk"
 
-urllib.request.urlretrieve(URL,"upload/"+x+".jpg")
+
+x = "ber142k"
+
+response = requests.get("https://kontakt.az/wp-content/uploads/gallery-tum/0072566_e835161ffba968add8bbc8a2f264bacd_w.jpg")
+
+file = open("upload/"+"sample_image.png", "wb")
+file.write(response.content)
+file.close()
